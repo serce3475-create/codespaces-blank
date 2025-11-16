@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "884832334803",
+    "project_id": "skyfleet-b5c54",
+    "storage_bucket": "skyfleet-b5c54.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884832334803:android:5f6b90139be92876aeb526",
+        "android_client_info": {
+          "package_name": "com.example.sky_fleet_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZh9V5gAM6GdrYrbIqbIrc1UM_n0974xo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
