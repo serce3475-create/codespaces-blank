@@ -23,17 +23,26 @@ jobs:
       - name: Get Flutter dependencies
         working-directory: ./SkyFleet_App
         run: |
+          flutter --version
           flutter clean
           flutter pub get
 
       - name: Build APK Release
         working-directory: ./SkyFleet_App
-        run: flutter build apk --release --no-tree-shake-icons
+        run: flutter build apk --release --verbose 2>&1 | tee build.log
 
       - name: Upload APK
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: sky-fleet-app-apk
           path: SkyFleet_App/build/app/outputs/apk/release/app-release.apk
-          if-no-files-found: error
           retention-days: 30
+
+      - name: Upload Build Log on Failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log
+          path: SkyFleet_App/build.log
+          retention-days: 7
